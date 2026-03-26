@@ -8,57 +8,58 @@ bestandsnaam = "woorden.txt"
 
 
 def main(bestandsnaam):
-
-
-    print("1. Speel galgje")
-    print("2. Verwijder een woord uit de woordenlijst.")
-    print("3:Voeg woord toe aan de woordenlijst.")
-    print("4:Toon aantal woorden in de woordenlijst.")
-    print("5:Stoppen")
     keuze = int(input("Keuze: "))
+    while keuze != 5:
 
-    if keuze == 1:
-        speelsessie()
-    elif keuze == 2:
-        bestand = lees_woorden(bestandsnaam)
+print("1. Speel galgje")
+print("2. Verwijder een woord uit de woordenlijst.")
+print("3:Voeg woord toe aan de woordenlijst.")
+print("4:Toon aantal woorden in de woordenlijst.")
+print("5:Stoppen")
+keuze = int(input("Keuze: "))
 
-        for woord in bestand:
-            print(woord)
+if keuze == 1:
+    speelsessie()
+elif keuze == 2:
+    bestand = lees_woorden(bestandsnaam)
 
+    for woord in bestand:
+        print(woord)
+
+    gekozen_woord = input("kies de woord die je wilt verwijderen ? ")
+
+    if gekozen_woord in bestand:
+        verwijderen = bestand.pop(gekozen_woord)
+        print("de woord die je gekozen hebt is verwijdert")
+        sla_woorden_op(bestandsnaam, bestand)
+    else:
+        print("de woord die je hebt gekozen is niet gevonden (probeer nog een keer)")
         gekozen_woord = input("kies de woord die je wilt verwijderen ? ")
 
-        if gekozen_woord in bestand:
-            verwijderen = bestand.pop(gekozen_woord)
-            print("de woord die je gekozen hebt is verwijdert")
-            sla_woorden_op(bestandsnaam, bestand)
-        else:
-            print("de woord die je hebt gekozen is niet gevonden (probeer nog een keer)")
-            gekozen_woord = input("kies de woord die je wilt verwijderen ? ")
 
+elif keuze == 3:
+    woord = lees_woorden(bestandsnaam)
+    nieuwe_woord = input("voer een woord in? ")
+    if len(nieuwe_woord) < 6:
+        moeilijkheid = 1
+        woord[nieuwe_woord] = moeilijkheid
+    elif len(nieuwe_woord) >= 7 and len(nieuwe_woord) <= 11:
+        moeilijkheid = 2
+        woord[nieuwe_woord] = moeilijkheid
+    elif len(nieuwe_woord) > 11:
+        moeilijkheid = 3
+        woord[nieuwe_woord] = moeilijkheid
 
-    elif keuze == 3:
-        woord = lees_woorden(bestandsnaam)
-        nieuwe_woord = input("voer een woord in? ")
-        if len(nieuwe_woord) < 6:
-            moeilijkheid = 1
-            woord[nieuwe_woord] = moeilijkheid
-        elif len(nieuwe_woord) >= 7 and len(nieuwe_woord) <= 11:
-            moeilijkheid = 2
-            woord[nieuwe_woord] = moeilijkheid
-        elif len(nieuwe_woord) > 11:
-            moeilijkheid = 3
-            woord[nieuwe_woord] = moeilijkheid
+    sla_woorden_op(bestandsnaam, woord)
 
-        sla_woorden_op(bestandsnaam,woord)
+    print(f"{nieuwe_woord} is toegevoegd """)
 
-        print(f"{nieuwe_woord} is toegevoegd """)
+elif keuze == 4:
+    aantal_woorden = len(lees_woorden(bestandsnaam))
+    print(f"het aantal woorden in de woordenlijst is {aantal_woorden}")
 
-    elif keuze == 4:
-        aantal_woorden = len(lees_woorden(bestandsnaam))
-        print(f"het aantal woorden in de woordenlijst is {aantal_woorden}")
-
-    elif keuze == 5:
-        print("stop")
+elif keuze == 5:
+    print("stop")
 
 
 def lees_woorden(bestandsnaam):
