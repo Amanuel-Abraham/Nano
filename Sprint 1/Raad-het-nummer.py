@@ -72,9 +72,6 @@ def raad_het_nummer():
         #  print(f"Je hebt nog {aantal} pogingen. TIP: hoger raden")
         #  getal_raden = int(input('Doe nog een gok (ozf enter om te stoppen):'))
 
-
-
-
 raad_het_nummer()
 
 
