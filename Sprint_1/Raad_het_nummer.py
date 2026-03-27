@@ -32,13 +32,9 @@ def max_pogingen(moeilijkheid):
 
 def raad_het_nummer():
 
-    # naam
     naam = input("wat is je naam:")
-    # Functie genereer_getal(moeilijkheid) returnt het te raden getal
     moeilijkheid = int(input("Kies een moeilijkheid (1=easy, 2=normaal, 3=moeilijk):"))
     getal = genereer_getal(moeilijkheid)
-    print(getal)
-    #Functie  max_pogingen(moeilijkheid) returnt 5, 7 of 10
     poging = max_pogingen(moeilijkheid)
     print(f"Je hebt  {poging}  pogingen.")
 
@@ -49,7 +45,7 @@ def raad_het_nummer():
     for x in range(poging -1):
 
         if getal_raden == getal:
-            print("gelukt je hebt geraden")
+            print("Gelukt! Je hebt het geraden")
             break
         elif getal_raden != getal:
             if getal_raden > getal:
@@ -60,19 +56,8 @@ def raad_het_nummer():
             print(f"Je hebt nog {aantal} pogingen. TIP: {tip}")
             getal_raden = int(input('Doe nog een gok (of enter om te stoppen):'))
         elif getal_raden == "":
-              print("er is iets gegaan")
+              print("Ongeldige invoer!")
 
-        # elif getal_raden != getal and getal_raden > getal:
-        #  aantal = (poging -1) - x
-        #  print(f"Je hebt nog {aantal} pogingen. TIP: {tip}")
-        #  getal_raden = int(input('Doe nog een gok (of enter om te stoppen):'))
-        #
-        # elif getal_raden != getal and getal_raden < getal:
-        #  aantal = (poging - 1) - x
-        #  print(f"Je hebt nog {aantal} pogingen. TIP: hoger raden")
-        #  getal_raden = int(input('Doe nog een gok (ozf enter om te stoppen):'))
-
-raad_het_nummer()
 
 
 
