@@ -20,21 +20,21 @@ def toonweer():
 
     # print(response_data)
     # print(weerbericht)
-    print(f"De temperature  {temp} /n"
-          f"De windsnelheid is {wind} ")
+    print(f"De temperature : {temp} \n"
+          f"De windsnelheid : {wind} ")
 
 
 
 
 def welkom():
     print("===================================")
-    print("        🎮 WELKOM BIJ DE GAME 🎮")
+    print("     WELKOM BIJ DE GAME")
     print("===================================")
     print()
     print("Kies een spel dat je wilt spelen:")
-    print("1: Raad het nummer 🔢")
-    print("2: Galgje 🔤")
-    print("3: Stoppen ❌")
+    print("1: Raad het nummer ")
+    print("2: Galgje ")
+    print("3: Stoppen ")
     print("4: Toon de weer")
     print()
 
