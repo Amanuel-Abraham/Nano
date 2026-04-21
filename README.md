@@ -1,4 +1,4 @@
-# Nano Project – Game Store 🎮
+# Nano Project – Game Store 
 
 ## Over dit project
 Het doel van dit project is om de basiskennis van Python in de praktijk toe te passen, zodat we ervaring opdoen met het ontwikkelen van een werkende applicatie.
